@@ -1,4 +1,6 @@
-﻿using System.Net.Http.Headers;
+﻿using bytebank.Modelos.Conta;
+using bytebank_ATENDIMENTO.bytebank.Util;
+using System.Net.Http.Headers;
 using System.Runtime.Serialization;
 
 Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
@@ -62,7 +64,7 @@ void testaBusca()
     amostra.SetValue(10, 3);
     amostra.SetValue(6.9, 4);
 
-    TestaMediana(amostra);
+    //TestaMediana(amostra);
 
     void TestaMediana(Array array)
     {
@@ -84,7 +86,7 @@ void testaBusca()
     }
 
 
-CalculaMedia();
+//CalculaMedia();
 
 void CalculaMedia()
 {
@@ -104,4 +106,44 @@ void CalculaMedia()
     Console.WriteLine($"a MEDIA É {media2}");
 
 
+}
+
+TestaArrayDeContasCorrentes();
+
+//void TestaArrayDeContasCorrentes()
+//{
+//    ContaCorrente[] listaDeContas = new ContaCorrente[]
+//    {
+//        new ContaCorrente(874, "7543587-A"),
+//        new ContaCorrente(874, "7543587-A"),
+//        new ContaCorrente(874, "7543587-A"),
+//    };
+
+//    for (int i = 0; i < listaDeContas.Length; i++)
+//    {
+//        ContaCorrente contaAtual = listaDeContas[1];
+//        Console.WriteLine($"índice {i} - Conta: {contaAtual.Conta}");
+//    }
+//}
+
+void TestaArrayDeContasCorrentes()
+{
+    ListaContasCorrentes listaDeContas = new ListaContasCorrentes();
+    {
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-A"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-B"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-C"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-A"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-B"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-C"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-A"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-B"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-C"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-A"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-B"));
+        listaDeContas.Adiciona(new ContaCorrente(874, "7543587-C"));
+
+    }
+
+   
 }

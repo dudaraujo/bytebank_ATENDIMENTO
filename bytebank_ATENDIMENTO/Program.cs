@@ -21,7 +21,7 @@ void testaArrayInt()
 
     int soma = 0;
 
-    for (int posicao = 0; posicao < 5; posicao++)
+    for (int posicao = 0; posicao < idades.Length; posicao++)
     {
         int idade = idades[posicao];
         Console.WriteLine($"índice [{posicao}] = {idade}");
@@ -115,13 +115,13 @@ TestaArrayDeContasCorrentes();
 //    ContaCorrente[] listaDeContas = new ContaCorrente[]
 //    {
 //        new ContaCorrente(874, "7543587-A"),
-//        new ContaCorrente(874, "7543587-A"),
-//        new ContaCorrente(874, "7543587-A"),
+//        new ContaCorrente(875, "7543587-b"),
+//        new ContaCorrente(876, "7543587-c"),
 //    };
 
 //    for (int i = 0; i < listaDeContas.Length; i++)
 //    {
-//        ContaCorrente contaAtual = listaDeContas[1];
+//        ContaCorrente contaAtual = listaDeContas[i];
 //        Console.WriteLine($"índice {i} - Conta: {contaAtual.Conta}");
 //    }
 //}
@@ -143,6 +143,12 @@ void TestaArrayDeContasCorrentes()
         listaDeContas.Adiciona(new ContaCorrente(874, "7543587-B"));
         listaDeContas.Adiciona(new ContaCorrente(874, "7543587-C"));
 
+        var contaDoAndre = new ContaCorrente(123, "123123123");
+        listaDeContas.Adiciona(contaDoAndre);
+        listaDeContas.ExibirLista();
+        Console.WriteLine("-------------------------------");
+        listaDeContas.Remover(contaDoAndre);
+        listaDeContas.ExibirLista();
     }
 
    
